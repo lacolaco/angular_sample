@@ -8,12 +8,16 @@ import "package:angular/angular.dart";
   useShadowDom: true,
   publishAs: "self",
   map: const {
-    'name-attr': '@name'
-  }
+    'name-attr': '@name',
+    'color': '@color'
+  },
+  cssUrl: 'packages/angular_sample/name_component.css'
 )
 class NameComponent {
 
   String name;
+
+  String color;
 
   NameComponent get self => this;
 }
