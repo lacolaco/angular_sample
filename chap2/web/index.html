@@ -12,14 +12,13 @@
 <div recipe-book>
     <h3>Recipe List</h3>
     <ul>
-        <li class="pointer"
-            ng-repeat="recipe in cmp.recipes"
-            ng-click="cmp.selectRecipe(recipe)">
+        <li class="pointer" ng-repeat="recipe in cmp.recipes" ng-click="cmp.selectRecipe(recipe)">
             {{recipe.name}}
         </li>
     </ul>
 
     <h3>Recipe Details</h3>
+
     <div><strong>Name: </strong>{{cmp.selectedRecipe.name}}</div>
     <div><strong>Category: </strong>{{cmp.selectedRecipe.category}}</div>
     <div><strong>Rating: </strong>{{cmp.selectedRecipe.rating}}</div>
