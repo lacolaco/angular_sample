@@ -3,7 +3,7 @@ import 'package:angular/application_factory.dart';
 
 void main() {
   applicationFactory()
-    ..rootContextType(RecipeController)
+    ..rootContextType(RecipeBookController)
     ..run();
 }
 
@@ -11,13 +11,13 @@ void main() {
   selector: '[recipe-book]',
   publishAs: 'ctrl'
 )
-class RecipeController {
+class RecipeBookController {
   Recipe selectedRecipe;
   List<Recipe> recipes;
 
-  RecipeController get ctrl => this;
+  RecipeBookController get ctrl => this;
 
-  RecipeController() {
+  RecipeBookController() {
     recipes = _loadData();
   }
 
