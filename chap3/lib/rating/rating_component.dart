@@ -6,14 +6,14 @@ import 'package:angular/angular.dart';
   selector: 'rating',
   templateUrl: 'packages/angular_sample/rating/rating_component.html',
   cssUrl: 'packages/angular_sample/rating/rating_component.css',
-  publishAs: 'ratingCmp',
+  publishAs: 'cmp',
   map: const{
     'rating' : '<=>rating',
     'max-rating' : '@maxRating'
   })
 class RatingComponent {
 
-  get ratingCmp => this;
+  get cmp => this;
 
   static const String _STAR_ON_CHAR = "\u2605";
   static const String _STAR_OFF_CHAR = "\u2606";
