@@ -12,10 +12,11 @@ void main() {
   publishAs: 'cmp'
 )
 class RecipeBookComponent {
-  Recipe selectedRecipe;
-  List<Recipe> recipes;
 
   RecipeBookComponent get cmp => this;
+
+  Recipe selectedRecipe;
+  List<Recipe> recipes;
 
   RecipeBookComponent() {
     recipes = _loadData();
