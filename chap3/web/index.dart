@@ -5,6 +5,15 @@ import "package:angular_sample/main_module.dart";
 
 void main() {
   applicationFactory()
-  .addModule(new MainModule())
-  .run();
+    ..rootContextType(HelloAngular)
+    ..run();
+}
+
+@Injectable()
+class HelloAngular {
+
+  String name;
+
+  String get name2 => name;
+
 }

@@ -7,8 +7,14 @@
     <script src="packages/web_components/dart_support.js"></script>
 </head>
 <body>
-<name name-attr="Angular" color="black"></name>
-<name name-attr="Dart" color="red"></name>
+<!--<name name-attr="Angular" color="black"></name>-->
+<!--<name name-attr="Dart" color="red"></name>-->
+<div nameCtrl>
+    <h3>Hello {{name}}!</h3>
+    Name: <input type="text" ng-model="name">
+
+    <h3>{{ name2 }}</h3>
+</div>
 <script type="application/dart" src="index.dart"></script>
 <script type="text/javascript" src="packages/browser/dart.js"></script>
 </body>
