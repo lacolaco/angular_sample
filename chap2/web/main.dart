@@ -2,13 +2,9 @@ import 'package:angular/angular.dart';
 import 'package:angular/application_factory.dart';
 
 void main() {
-//  applicationFactory()
-//    ..rootContextType(RecipeBookComponent)
-//    ..run();
   applicationFactory()
-  .addModule(new Module()
-    ..bind(RecipeBookComponent))
-  .run();
+    ..rootContextType(RecipeBookComponent)
+    ..run();
 }
 
 @Component(
