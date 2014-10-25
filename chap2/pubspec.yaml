@@ -1,0 +1,9 @@
+name: angular_sample
+dependencies:
+  browser: any
+  angular: ">=1.0.0 <2.0.0"
+  web_components: any
+dev_dependencies:
+  unittest: any
+transformers:
+- angular

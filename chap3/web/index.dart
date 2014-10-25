@@ -9,7 +9,6 @@ void main() {
     ..run();
 }
 
-@Injectable()
 class HelloAngular {
 
   String name;
