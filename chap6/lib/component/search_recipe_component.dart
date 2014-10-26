@@ -8,7 +8,7 @@ import 'package:angular/angular.dart';
   publishAs: 'cmp',
   map: const{
     'name-filter-string' : '<=>nameFilterString',
-    'category-filter-map' : '=>categoryFilterMap'
+    'category-filter-map' : '<=>categoryFilterMap'
   })
 class SearchRecipeComponent {
 
