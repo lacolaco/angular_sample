@@ -1,0 +1,36 @@
+<div ng-switch="cmp.recipesLoaded && cmp.categoriesLoaded">
+    <div ng-switch-when="false">
+        {{cmp.message}}
+    </div>
+    <div ng-switch-when="true">
+        <h3>Recipe List</h3>
+
+        <nav id="controls">
+            <search-recipe
+                    name-filter-string="cmp.nameFilter"
+                    category-filter-map="cmp.categoryFilterMap">
+            </search-recipe>
+
+            <a href="/#/add"><input type="button" value="Add Recipe"></a><br/>
+        </nav>
+
+        <nav id="search-results">
+            <div id="recipe-list">
+                <ul>
+                    <li ng-repeat="recipe in cmp.allRecipes | orderBy:'name' | filter:{name:cmp.nameFilter} | categoryfilter:cmp.categoryFilterMap">
+              <span tooltip="cmp.tooltipForRecipe(recipe)">
+                <rating max-rating="5" rating="recipe.rating"></rating>
+                <a class="extra-space" href="/#/recipe/{{recipe.id}}/view">{{recipe.name}}</a>
+              </span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <section id="details">
+            <ng-view></ng-view>
+        </section>
+
+    </div>
+
+</div>
