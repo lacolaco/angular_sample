@@ -1,0 +1,29 @@
+<h3>Recipe List</h3>
+<ul>
+    <li class="pointer"
+        ng-repeat="recipe in cmp.recipes">
+          <span tooltip="cmp.tooltipForRecipe(recipe)">
+            <rating max-rating="5" rating="recipe.rating"></rating>
+            <span class="extra-space"
+                  ng-click="cmp.selectRecipe(recipe)">{{recipe.name}}</span>
+          </span>
+    </li>
+</ul>
+
+<div ng-if="cmp.selectedRecipe != null">
+    <h3>Recipe Details</h3>
+
+    <div><strong>Name: </strong>{{cmp.selectedRecipe.name}}</div>
+    <div><strong>Category: </strong>{{cmp.selectedRecipe.category}}</div>
+    <div><strong>Rating: </strong>
+        <rating max-rating="5" rating="cmp.selectedRecipe.rating"></rating>
+    </div>
+    <div>
+        <ul>
+            <li ng-repeat="ingredient in cmp.selectedRecipe.ingredients">
+                {{ingredient}}
+            </li>
+        </ul>
+    </div>
+    <div><strong>Directions: </strong>{{cmp.selectedRecipe.directions}}</div>
+</div>
