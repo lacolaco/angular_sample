@@ -1,0 +1,58 @@
+<div ng-switch="cmp.recipesLoaded && cmp.categoriesLoaded">
+    <div ng-switch-when="false">
+        {{cmp.message}}
+    </div>
+    <div ng-switch-when="true">
+        <h3>Recipe List</h3>
+
+        <div id="filters">
+            <div>
+                <label for="name-filter">Filter recipes by name</label>
+                <input id="name-filter" type="text"
+                       ng-model="cmp.nameFilterString">
+            </div>
+            <div>
+                Filter recipes by category:
+          <span ng-repeat="category in cmp.categories">
+            <label>
+                <input type="checkbox"
+                       ng-model="cmp.categoryFilterMap[category]">{{category}}
+            </label>
+          </span>
+            </div>
+            <input type="button" value="Clear Filters" ng-click="cmp.clearFilters()">
+        </div>
+
+        <div id="recipe-list">
+            <ul>
+                <li class="pointer"
+                    ng-repeat="recipe in cmp.recipes | orderBy:'name' | filter:{name:cmp.nameFilterString} | categoryfilter:cmp.categoryFilterMap">
+            <span tooltip="cmp.tooltipForRecipe(recipe)">
+              <rating max-rating="5" rating="recipe.rating"></rating>
+              <span class="extra-space"
+                    ng-click="cmp.selectRecipe(recipe)">{{recipe.name}}</span>
+            </span>
+                </li>
+            </ul>
+        </div>
+
+        <div id="recipe-details" ng-if="cmp.selectedRecipe != null">
+            <h3>Recipe Details</h3>
+
+            <div><strong>Name: </strong>{{cmp.selectedRecipe.name}}</div>
+            <div><strong>Category: </strong>{{cmp.selectedRecipe.category}}</div>
+            <div><strong>Rating: </strong>
+                <rating max-rating="5" rating="cmp.selectedRecipe.rating"></rating>
+            </div>
+            <div>
+                <ul>
+                    <li ng-repeat="ingredient in cmp.selectedRecipe.ingredients">
+                        {{ingredient}}
+                    </li>
+                </ul>
+            </div>
+            <div><strong>Directions: </strong>{{cmp.selectedRecipe.directions}}</div>
+        </div>
+    </div>
+
+</div>
